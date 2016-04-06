@@ -7,9 +7,9 @@ public class PropertyLoader {
 
 	private PropertiesConfiguration properties;
 	
-	public PropertyLoader(String rootSource, String filename) {
+	public PropertyLoader(String filename) {
 		try {
-			properties = new PropertiesConfiguration(rootSource + "/" + filename);
+			properties = new PropertiesConfiguration(ResourcePath.getResourceURL(filename));
 		} catch (ConfigurationException e) {
 			throw new RuntimeException(e.getMessage());
 		}
